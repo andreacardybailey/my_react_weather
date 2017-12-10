@@ -1,7 +1,9 @@
-export const showWeather = () => ({
-  type: 'SHOW_WEATHER'
+export const submitForm = (inputVal) => ({
+  type: 'SUBMIT_FORM',
+  inputVal
 });
 
-export const updateCurrentDay = () => ({
-  type: 'UPDATE_CURRENT_DAY'
+export const clickOnDay = (day) => ({
+  type: 'CLICK_ON_DAY',
+  day
 });
