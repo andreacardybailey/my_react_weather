@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { Route, Router } from 'react-router-dom';
 import './css/global.css';
 import WeatherForm from './components/WeatherForm';
-import WeatherApp from './components/WeatherApp';
+import App from './components/App';
 
 import { Provider } from 'react-redux'; 
 import store, { history } from './store';
@@ -14,7 +14,7 @@ const Root = () => {
       <Router history={history}>
           <div>
             <Route exact path="/" component={ WeatherForm } />
-            <Route path="/weather/:weatherId" component={ WeatherApp } />
+            <Route path="/weather/:weatherId" component={ App } />
           </div>
       </Router>
     </Provider>
