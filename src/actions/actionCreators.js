@@ -1,9 +1,9 @@
-export const showFiveDayForecast = (inputVal) => ({
-  type: 'SHOW_FIVE_DAY_FORECAST',
+export const getFiveDayForecast = (inputVal) => ({
+  type: 'GET_FIVE_DAY_FORECAST',
   inputVal
 });
 
-export const showSelectedDay = (day) => ({
-  type: ' SHOW_SELECTED_DAY',
+export const getSelectedDay = (day) => ({
+  type: ' GET_SELECTED_DAY',
   day
 });
