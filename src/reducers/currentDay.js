@@ -1,7 +1,12 @@
-const currentDay = (state = [], action) => {
-  console.log("The currentDay will change");
-  console.log(state, action);
-  return state;
+const currentDay = (state = {}, action) => {
+  switch(action.type) {
+    case 'GET_SELECTED_DAY':
+      return action.day
+
+    // always return a default
+    default:  
+      return state;
+  }
 }
 
 export default currentDay;

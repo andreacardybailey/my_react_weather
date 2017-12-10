@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Route, Router } from 'react-router-dom';
 import './css/global.css';
-import WeatherForm from './components/WeatherForm';
-import App from './components/App';
+import WeatherAppContainer from './components/WeatherAppContainer';
+import WeatherFormContainer from './components/WeatherFormContainer';
 
 import { Provider } from 'react-redux'; 
 import store, { history } from './store';
@@ -13,8 +13,8 @@ const Root = () => {
     <Provider store={store}>
       <Router history={history}>
           <div>
-            <Route exact path="/" component={ WeatherForm } />
-            <Route path="/weather/:weatherId" component={ App } />
+            <Route exact path="/" component={ WeatherFormContainer } />
+            <Route path="/weather/:weatherId" component={ WeatherAppContainer } />
           </div>
       </Router>
     </Provider>

@@ -5,8 +5,14 @@ class WeatherForm extends React.Component {
   getWeather(event) {
     event.preventDefault();
     const weatherId = this.weatherFormInput.value;
-    let path = `/weather/${weatherId}`;
-    this.props.history.push(path);
+    if(weatherId === "" ) {
+      alert("Please enter: city, state");
+    }
+    else {
+      this.props.getFiveDayForecast(weatherId);
+      let path = `/weather/${weatherId}`;
+      this.props.history.push(path);
+    }
   }
   render() {
     return (

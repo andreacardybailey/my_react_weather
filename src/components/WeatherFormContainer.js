@@ -1,22 +1,20 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
-import WeatherApp from './WeatherApp';
+import WeatherForm from './WeatherForm';
 
 // creates this.props.city, this.props.currentDay
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     city: state.city,
     currentDay: state.currentDay
   }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(actionCreators, dispatch);
 }
 
+const WeatherFormContainer = connect(mapStateToProps, mapDispatchToProps)(WeatherForm);
 
-
-const App = connect(mapStateToProps, mapDispatchToProps)(WeatherApp); 
-
-export default App;
+export default WeatherFormContainer;
