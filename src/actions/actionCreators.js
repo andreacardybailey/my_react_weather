@@ -1,9 +1,9 @@
-export const submitForm = (inputVal) => ({
-  type: 'SUBMIT_FORM',
+export const showFiveDayForecast = (inputVal) => ({
+  type: 'SHOW_FIVE_DAY_FORECAST',
   inputVal
 });
 
-export const clickOnDay = (day) => ({
-  type: 'CLICK_ON_DAY',
+export const showSelectedDay = (day) => ({
+  type: ' SHOW_SELECTED_DAY',
   day
 });
