@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import { routerMiddleware} from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory'
+import createHistory from 'history/createBrowserHistory';
 
 import rootReducer from './reducers/index';
 import sample_city from './sample-city';

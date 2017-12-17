@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 import WeatherForm from './WeatherForm';
 
-// creates this.props.city, this.props.currentDay
+/**
+ *  creates this.props.city,
+ *  this.props.currentDay
+ */
 const mapStateToProps = (state) => {
   return {
     city: state.city,

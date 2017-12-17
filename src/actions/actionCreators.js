@@ -1,6 +1,6 @@
-export const getFiveDayForecast = (inputVal) => ({
+export const getFiveDayForecast = (city) => ({
   type: 'GET_FIVE_DAY_FORECAST',
-  inputVal
+  city
 });
 
 export const getSelectedDay = (day) => ({

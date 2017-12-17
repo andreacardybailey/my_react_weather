@@ -9,7 +9,16 @@ class WeatherForm extends React.Component {
       alert("Please enter: city, state");
     }
     else {
-      this.props.getFiveDayForecast(weatherId);
+      /**
+       * Once we are no longer using sample weather 
+       * data (sample-city.js), we will call pass the 
+       * user's form input (weatherId) as the argument 
+       * to this.props.getFiveDayForecast (below), like 
+       * this: this.props.getFiveDayForecast(weatherId)
+       */
+      const sample_city = this.props.city;
+      this.props.getFiveDayForecast(sample_city);
+      
       let path = `/weather/${weatherId}`;
       this.props.history.push(path);
     }
