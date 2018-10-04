@@ -9,7 +9,7 @@ export const getWeather = (locationKey) => ({
   payload: fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/14567_PC?apikey=lkzp9kzovyWmxxKEmSTxI5GQv6cxKE76`)
   .then(response => response.json()),
 });
-
+ 
 export const getSelectedDay = (currentDay) => ({
   type: 'GET_SELECTED_DAY',
   currentDay: function() { 
