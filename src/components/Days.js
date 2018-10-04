@@ -2,17 +2,22 @@ import React from 'react';
 import Day from './Day';
   
 const Days = (props) => {
-  const cityData = props.data.city;
+  const data = props.data;
+  const currentDay = props.currentDay;
+  const getSelectedDay = props.getSelectedDay;
+
   return (
     <div>
-      <h1>Weather for { props.cityState }</h1>
+      <h1>Weather for { props.city }</h1>
       <div className="days">
         {
-          cityData.map( (day, i) => {
+          data.map( (day, i) => {
             return (
               <Day 
-                day={ day } 
-                data={ props.data }
+                thisDay={ data[i] }
+                data={ data }
+                currentDay={ currentDay }
+                getSelectedDay= { getSelectedDay }
                 key={ i }
               />
             )

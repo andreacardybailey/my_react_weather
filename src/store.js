@@ -1,20 +1,26 @@
 import { createStore, applyMiddleware } from 'redux';
-import { routerMiddleware} from 'react-router-redux';
+import {routerMiddleware} from 'react-router-redux';
+import promiseMiddleware from 'redux-promise-middleware';
 import createHistory from 'history/createBrowserHistory';
-
+import logger from 'redux-logger';
 import rootReducer from './reducers/index';
-import sample_city from './sample-city';
 
-// Create a browser history
-export const history = createHistory();
-// Build the middleware for intercepting and dispatching navigation actions
-const middleware = routerMiddleware(history);
 
 const defaultState = {
-  city: sample_city,
-  currentDay: sample_city[0]
-}
+  weather: { isPending: true, dailyForecasts: [{dummyData:"data"}] },
+  city: { cityName: "Boca", cityId: "123d" },
+  currentDay: function() { 
+    return {today: this.weather.dailyForecasts[0]}
+  }
+};
 
-const store = createStore(rootReducer, defaultState, applyMiddleware(middleware));
+export const history = createHistory();
+
+const middleware = routerMiddleware(history);
+
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleware(), middleware, logger)(createStore); 
+
+const store = createStoreWithMiddleware(rootReducer, defaultState, /*window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()*/);
+
 
 export default store;

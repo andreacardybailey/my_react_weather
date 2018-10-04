@@ -8,16 +8,13 @@ const NightForecast = (props) => {
       <div className="left-side">
         <h2>NIGHT</h2>
         <div className="temp">
-          { currentDay.temp_min }&deg;
+          { Math.round(currentDay.Temperature.Minimum.Value) }&deg;
           <span className="label">LO</span>
         </div>
-        <div className="precipitation"> 
-          Precipitation: <span>{ currentDay.night.precipitation }</span> 
-        </div>
       </div>
-      <img src={ process.env.PUBLIC_URL + "/weather_icons/" + currentDay.night.icon + ".png" } alt="weather" />
+      <img src={ process.env.PUBLIC_URL + "/weather_icons/" + currentDay.Night.Icon + "-s.png" } alt="weather" />
     </div>
-    <p>{ currentDay.night.description }</p>
+    <p>{ currentDay.Night.IconPhrase }</p>
   </div>
   )
 }

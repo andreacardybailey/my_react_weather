@@ -9,14 +9,14 @@ import WeatherForm from './WeatherForm';
  */
 const mapStateToProps = (state) => {
   return {
-    city: state.city,
-    currentDay: state.currentDay
-  }
-}
+    weather: state.weather.dailyForecasts,
+    city: state.city
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(actionCreators, dispatch);
-}
+};
 
 const WeatherFormContainer = connect(mapStateToProps, mapDispatchToProps)(WeatherForm);
 

@@ -18,21 +18,21 @@ class Day extends React.Component {
       });
   }
   render() {
-    const day = this.props.day;
+    const thisDay = this.props.thisDay;
     const classes = classNames({
-      day: true, 
-      selected: day === this.props.data.currentDay
+      day: true,
+      selected: thisDay === this.props.currentDay.today
     });
 
     return (
-      <div className={ classes } onClick={ () => this.props.data.getSelectedDay(day) }>
-        <h2>{ this.getDayOfWeek(day.dt) }</h2>
-        <h3>{ this.formatDate(day.dt) }</h3>
-        <img src={ process.env.PUBLIC_URL + "/weather_icons/" + day.icon + ".png" } alt="weather" />
+      <div className={ classes } onClick={ () => this.props.getSelectedDay(thisDay) }>
+        <h2>{ this.getDayOfWeek(thisDay.Date) }</h2>
+        <h3>{ this.formatDate(thisDay.Date) }</h3>
+        <img src={ process.env.PUBLIC_URL + "/weather_icons/" + thisDay.Day.Icon + "-s.png" } alt="weather" />
         <div className="degrees">
-          <span className="high">{ day.temp_max }&deg;</span>/{ day.temp_min }&deg;
+          <span className="high">{ thisDay.Temperature.Maximum.Value }&deg;</span>/{ thisDay.Temperature.Minimum.Value }&deg;
         </div>
-        <p>{ day.description }</p>
+        <p>{ thisDay.Day.IconPhrase }</p>
       </div>
     )
   }

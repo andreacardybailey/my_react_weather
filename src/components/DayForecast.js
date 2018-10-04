@@ -8,16 +8,13 @@ const DayForecast = (props) => {
         <div className="left-side">
           <h2>DAY</h2>
           <div className="temp">
-            { currentDay.temp_max }&deg;
+            { Math.round(currentDay.Temperature.Maximum.Value) }&deg;
             <span className="label">HI</span>
           </div>
-          <div className="precipitation"> 
-            Precipitation: <span>{ currentDay.day.precipitation }</span> 
-          </div>
         </div>
-        <img src={ process.env.PUBLIC_URL + "/weather_icons/" + currentDay.day.icon + ".png" } alt="weather" />
+        <img src={ process.env.PUBLIC_URL + "/weather_icons/" + currentDay.Day.Icon + "-s.png" } alt="weather" />
       </div>
-      <p>{ currentDay.day.description }</p>
+      <p>{ currentDay.Day.IconPhrase }</p>
     </div>
   )
 }

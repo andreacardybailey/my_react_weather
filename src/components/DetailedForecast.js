@@ -3,12 +3,17 @@ import DayForecast from './DayForecast';
 import NightForecast from './NightForecast';
   
 const DetailedForecast = (props) => {
-  return (
-    <div className="details">
-      <DayForecast currentDay={ props.currentDay } />
-      <NightForecast currentDay={ props.currentDay } />
-    </div>
-  )
+  if(props.currentDay.today === undefined){
+    return null;
+  }
+  else {
+    return (
+      <div className="details">
+        <DayForecast currentDay={ props.currentDay.today} />
+        <NightForecast currentDay={ props.currentDay.today } />
+      </div>
+    )
+  }
 }
 
 export default DetailedForecast;
